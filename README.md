@@ -6,6 +6,8 @@ AquiferX produit une carte probabiliste des zones favorables à la présence d'e
 
 > ⚠️ **Statut : preuve de concept.** AquiferX *oriente* la décision de forage ; il ne la remplace pas. Les limites sont documentées en détail plus bas — elles sont assumées, pas masquées.
 
+![Potentiel en eau souterraine — Extrême-Nord, Cameroun](images/carte_cameroun.png)
+
 ---
 
 ## Le problème
@@ -48,6 +50,15 @@ Issues de jeux de données mondiaux via Google Earth Engine :
 - **AUC ≈ 0,78** en validation croisée spatiale (12 649 points d'eau filtrés, sous-échantillonnés à 1 000).
 - Variables les plus discriminantes (SHAP) : `ndwi`, `ndvi`, `elevation`, `tpi`, `rainfall`.
 
+![Potentiel en eau souterraine — Kano / Katsina, Nigeria](images/carte_nigeria.png)
+
+<details>
+<summary>Contribution des variables (SHAP)</summary>
+
+![Valeurs SHAP](images/shap.png)
+
+</details>
+
 ### Transfert géographique — Extrême-Nord Cameroun (Maroua / Mokolo)
 
 Le modèle, entraîné **uniquement** sur le socle nigérian, a été confronté à **251 forages réels** de l'Extrême-Nord camerounais (extraits d'OpenStreetMap), à ~550 km de la zone d'entraînement.
@@ -88,6 +99,7 @@ AquiferX/
 ├── validation_cameroun_v3.py    # Validation du transfert (3 protocoles + indice d'agglutination)
 ├── test_mandara.py              # Comparaison proximité géologique vs volume de données
 ├── carte_cameroun_design.py     # Carte finale (relief ombré, encart de localisation)
+├── images/                      # Cartes affichées dans ce README
 ├── data/                        # CSV d'entrée (WPdx, points OSM)
 └── outputs/                     # Cartes et graphiques générés (PNG)
 ```
