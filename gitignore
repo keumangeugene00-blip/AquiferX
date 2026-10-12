@@ -1,0 +1,27 @@
+# --- Secrets et credentials : NE JAMAIS publier ---
+*.json
+!package.json
+credentials/
+.env
+*.key
+*token*
+
+# --- Données volumineuses (décommente si tu ne veux pas versionner les CSV) ---
+# data/*.csv
+
+# --- Sorties générées ---
+outputs/
+*.log
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# --- Système ---
+.DS_Store
+Thumbs.db

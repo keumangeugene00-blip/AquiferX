@@ -1,0 +1,6 @@
+requests
+pdfplumber
+pandas
+numpy
+scipy
+matplotlib
